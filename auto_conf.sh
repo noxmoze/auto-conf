@@ -35,7 +35,7 @@ logfile        /var/log/msmtp.log
 account        default
 host           $smtp_server
 port           $smtp_port
-from           $email_address
+from           $smtp_user
 user           $smtp_user
 password       $smtp_password
 
