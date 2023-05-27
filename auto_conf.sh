@@ -22,6 +22,8 @@ smtp_port=$2
 smtp_user=$3
 smtp_password=$4
 email_address=$5
+ip_srv_rsyslog=$6
+port_srv_rsyslog=$7
 
 # Configuration de msmtp
 echo "configuration msmtp..."
@@ -75,5 +77,10 @@ echo "Configuration de cron-apt terminée. Voici le contenu du fichier /etc/cron
 cat /etc/cron-apt/config
 
 echo "Les fichiers de configuration se trouvent dans /etc/msmtprc et /etc/cron-apt/config. Assurez-vous de les protéger en conséquence."
+
+# Connection au serveur log
+echo "*.* @$ip_srv_rsyslog:$port_srv_rsyslog" >> /etc/rsyslog.conf
+
+systemctl restart rsyslog
 
 exit 0
