@@ -12,7 +12,7 @@ apt install msmtp -y
 
 # Vérification des arguments de ligne de commande
 if [ $# -ne 5 ]; then
-  echo "Utilisation : $0 <serveur_SMTP> <port_SMTP> <utilisateur_SMTP> <mot_de_passe_SMTP> <adresse_email>"
+  echo "Utilisation : $0 <serveur_SMTP> <port_SMTP> <utilisateur_SMTP> <mot_de_passe_SMTP> <adresse_email> <ip_srv_rsyslog> <port_srv_rsyslog   >"
   exit 1
 fi
 
